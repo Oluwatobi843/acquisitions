@@ -1,0 +1,25 @@
+{
+  "name": "acquisitions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oluwatobi843/acquisitions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+   "type": "module",
+  "bugs": {
+    "url": "https://github.com/Oluwatobi843/acquisitions/issues"
+  },
+  "homepage": "https://github.com/Oluwatobi843/acquisitions#readme",
+  "dependencies": {
+    "dotenv": "^18.0.5",
+    "express": "^5.2.1"
+  }
+}
