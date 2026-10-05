@@ -8,7 +8,11 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio"
+     
   },
   "repository": {
     "type": "git",
@@ -23,11 +27,14 @@
   },
   "homepage": "https://github.com/Oluwatobi843/acquisitions#readme",
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "dotenv": "^18.0.5",
+    "drizzle-orm": "^0.45.3",
     "express": "^5.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "drizzle-kit": "^0.31.11",
     "eslint": "^10.12.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
