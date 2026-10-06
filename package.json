@@ -37,6 +37,7 @@
   "homepage": "https://github.com/Oluwatobi843/acquisitions#readme",
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",
+    "bcrypt": "^6.0.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^18.0.5",

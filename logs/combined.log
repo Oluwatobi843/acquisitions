@@ -13,3 +13,49 @@
 {"level":"info","message":"::1 - - [05/Oct/2026:23:31:29 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}
 {"level":"info","message":"::1 - - [05/Oct/2026:23:31:34 +0000] \"GET /api HTTP/1.1\" 200 41 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}
 {"level":"info","message":"::1 - - [05/Oct/2026:23:31:51 +0000] \"GET /health HTTP/1.1\" 200 75 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:00:42:37 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:00:42:56 +0000] \"GET /api/auth/sign-up HTTP/1.1\" 404 155 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:00:44:00 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 92 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:00:45:47 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 144 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"Ùser registered successfully: alao@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:00:46:38 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 98 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"User alao@gmail.com created successfully","service":"acquisitions-api"}
+{"level":"error","message":"Signup error jwttoken is not defined","service":"acquisitions-api","stack":"ReferenceError: jwttoken is not defined\n    at signup (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:22:19)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"}
+{"level":"info","message":"::1 - - [06/Oct/2026:01:24:01 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 500 382 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"error","message":"Error creating the user: Error: User already exists","service":"acquisitions-api"}
+{"level":"error","message":"Signup error User already exists","service":"acquisitions-api","stack":"Error: User already exists\n    at createUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:25:39)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async signup (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:22:18)"}
+{"level":"info","message":"::1 - - [06/Oct/2026:01:25:33 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 500 493 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"User alaoo@gmail.com created successfully","service":"acquisitions-api"}
+{"level":"info","message":"Ùser registered successfully: alaoo@gmail.com","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:01:25:45 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 100 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"error","message":"Error comparing the password: Error: data and hash arguments required","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating the user: Error: Error comparing","service":"acquisitions-api"}
+{"cause":{},"level":"error","message":"Signin error Error comparing","service":"acquisitions-api","stack":"Error: Error comparing\n    at comparePassword (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:22:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async authenticateUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:61:29)\n    at async signIn (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:59:18)"}
+{"level":"info","message":"::1 - - [06/Oct/2026:02:11:15 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 500 624 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"User e2e-check-1791253455645@test.local created successfully","service":"acquisitions-api"}
+{"level":"info","message":"Ùser registered successfully: e2e-check-1791253455645@test.local","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [06/Oct/2026:02:24:17 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 123 \"-\" \"node\"","service":"acquisitions-api"}
+{"level":"info","message":"User e2e-check-1791253455645@test.local authenticated successfully","service":"acquisitions-api"}
+{"level":"info","message":"User logged in successfully: e2e-check-1791253455645@test.local","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [06/Oct/2026:02:24:17 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 122 \"-\" \"node\"","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating the user: Error: Invalid password","service":"acquisitions-api"}
+{"level":"error","message":"Signin error Invalid password","service":"acquisitions-api","stack":"Error: Invalid password\n    at authenticateUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:63:32)\n    at async signIn (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:59:18)"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [06/Oct/2026:02:24:18 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"node\"","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating the user: Error: User not found","service":"acquisitions-api"}
+{"level":"error","message":"Signin error User not found","service":"acquisitions-api","stack":"Error: User not found\n    at authenticateUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:59:29)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async signIn (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:59:18)"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [06/Oct/2026:02:24:18 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"node\"","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [06/Oct/2026:02:24:18 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 400 114 \"-\" \"node\"","service":"acquisitions-api"}
+{"level":"info","message":"User logged out successfully","service":"acquisitions-api"}
+{"level":"info","message":"::ffff:127.0.0.1 - - [06/Oct/2026:02:24:18 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 29 \"-\" \"node\"","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating the user: Error: Invalid password","service":"acquisitions-api"}
+{"level":"error","message":"Signin error Invalid password","service":"acquisitions-api","stack":"Error: Invalid password\n    at authenticateUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:63:32)\n    at async signIn (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:59:18)"}
+{"level":"info","message":"::1 - - [06/Oct/2026:02:27:18 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"User logged out successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:07:54:42 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 29 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"User logged out successfully","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:07:56:18 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:07:56:30 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 400 92 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"error","message":"Error authenticating the user: Error: Invalid password","service":"acquisitions-api"}
+{"level":"error","message":"Signin error Invalid password","service":"acquisitions-api","stack":"Error: Invalid password\n    at authenticateUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:63:32)\n    at async signIn (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:59:18)"}
+{"level":"info","message":"::1 - - [06/Oct/2026:07:56:49 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
