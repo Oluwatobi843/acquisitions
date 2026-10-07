@@ -1,2 +1,12 @@
 node_modules
-.env.*
+logs/
+*.log
+
+# Local env files hold secrets - never commit them.
+# Commit only the *.example templates.
+.env
+.env.development
+.env.production
+
+# Neon Local metadata (per-git-branch persistent mode)
+.neon_local/

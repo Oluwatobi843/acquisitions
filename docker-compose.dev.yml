@@ -1,0 +1,61 @@
+# Development: app + Neon Local proxy (ephemeral Neon cloud branches)
+#
+#   docker compose -f docker-compose.dev.yml up --build
+#
+# Neon Local is a proxy in front of a Neon *cloud* branch, not an offline
+# Postgres. It still needs NEON_API_KEY / NEON_PROJECT_ID from .env.development,
+# but each `up` gets a fresh branch that is deleted on `down`.
+
+services:
+  neon-local:
+    image: neondatabase/neon_local:latest
+    container_name: acquisitions-neon-local
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    # Values come from .env.development (NEON_API_KEY, NEON_PROJECT_ID,
+    # PARENT_BRANCH_ID). PARENT_BRANCH_ID creates ephemeral branches that are
+    # deleted on `down`; use BRANCH_ID instead to pin an existing branch.
+    # Deliberately required: starting without an API key fails in a confusing
+    # way deep inside the proxy, so let compose error out up front instead.
+    env_file:
+      - .env.development
+
+  app:
+    build:
+      context: .
+      target: dev
+    container_name: acquisitions-app-dev
+    restart: unless-stopped
+    # Environment files are additive; compose `environment` wins over them.
+    # Real process env also wins, so secrets can be supplied at runtime.
+    env_file:
+      - .env.development
+    environment:
+      # In-container hostname: the app reaches Neon Local on the compose network.
+      DATABASE_URL: postgres://neon:npg@neon-local:5432/neondb?sslmode=require
+      NEON_LOCAL: 'true'
+      NEON_FETCH_ENDPOINT: http://neon-local:5432/sql
+      NODE_ENV: development
+    ports:
+      - '3000:3000'
+    depends_on:
+      - neon-local
+    # Bind-mount the source so `node --watch` picks up local edits.
+    volumes:
+      - ./src:/app/src
+      - ./drizzle:/app/drizzle
+      - ./scripts:/app/scripts
+      - ./package.json:/app/package.json
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+      start_period: 30s

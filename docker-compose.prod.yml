@@ -1,0 +1,47 @@
+# Production: app only, talking directly to Neon Cloud over HTTPS.
+#
+#   docker compose -f docker-compose.prod.yml build
+#   DATABASE_URL=postgres://...neon.tech... docker compose -f docker-compose.prod.yml up -d
+#
+# There is no database service here on purpose. Neon Serverless is a managed
+# cloud service with no container to run, so DATABASE_URL is injected from the
+# deployment environment and never lives in this file.
+
+services:
+  app:
+    build:
+      context: .
+      target: production
+    image: acquisitions-api:${IMAGE_TAG:-latest}
+    container_name: acquisitions-app
+    restart: unless-stopped
+    init: true
+    ports:
+      - '${PORT:-3000}:3000'
+    environment:
+      NODE_ENV: production
+      # Required at deploy time. Compose fails fast if either is missing.
+      DATABASE_URL: ${DATABASE_URL:?Set DATABASE_URL to your Neon connection string}
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET}
+      # ARCJET_KEY is optional; without it Arcjet denies/throws and the
+      # security middleware returns 500 on every request.
+      ARCJET_KEY: ${ARCJET_KEY:-}
+      PORT: 3000
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+      # Do not migrate production automatically from a rolling container.
+      RUN_MIGRATIONS: ${RUN_MIGRATIONS:-false}
+    # Strict: no secret files are baked into the image or mounted in.
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'node',
+          '-e',
+          "fetch('http://127.0.0.1:3000/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

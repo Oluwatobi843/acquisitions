@@ -59,3 +59,6 @@
 {"level":"error","message":"Error authenticating the user: Error: Invalid password","service":"acquisitions-api"}
 {"level":"error","message":"Signin error Invalid password","service":"acquisitions-api","stack":"Error: Invalid password\n    at authenticateUser (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/services/auth.service.js:63:32)\n    at async signIn (file:///C:/Users/HP/Documents/GitHub/acquisitions/src/controllers/auth.controller.js:59:18)"}
 {"level":"info","message":"::1 - - [06/Oct/2026:07:56:49 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"PostmanRuntime/2.10.1\"","service":"acquisitions-api"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:08:25:56 +0000] \"GET / HTTP/1.1\" 304 - \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}
+{"level":"info","message":"::1 - - [06/Oct/2026:08:26:04 +0000] \"GET /health HTTP/1.1\" 200 74 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.140.0 Chrome/150.0.7871.250 Electron/43.7.3 Safari/537.36\"","service":"acquisitions-api"}

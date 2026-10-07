@@ -1,0 +1,21 @@
+# Volumes and local state
+node_modules
+logs
+*.log
+.git
+.neon_local
+
+# Secrets must never enter the image. The compose files inject env instead.
+.env
+.env.development
+.env.production
+.env.*
+
+# Not needed inside the container
+Dockerfile
+docker-compose*.yml
+README.md
+.prettierignore
+.prettierrc
+eslint.config.js
+coverage
